@@ -5,18 +5,16 @@ import os
 
 print("STARTING DROWSINESS DETECTION...")
 
-# ===============================
 # PATH SETUP (VERY IMPORTANT)
-# ===============================
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 
 face_path = os.path.join(DATA_DIR, "haarcascade_frontalface_default.xml")
 eye_path = os.path.join(DATA_DIR, "haarcascade_eye.xml")
 
-# ===============================
 # LOAD CASCADES
-# ===============================
+
 face_cascade = cv2.CascadeClassifier(face_path)
 eye_cascade = cv2.CascadeClassifier(eye_path)
 
@@ -24,9 +22,8 @@ if face_cascade.empty() or eye_cascade.empty():
     print("ERROR: Haarcascade files not loaded")
     exit()
 
-# ===============================
 # CAMERA SETUP
-# ===============================
+
 cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 
 if not cap.isOpened():
@@ -35,16 +32,16 @@ if not cap.isOpened():
 
 print("CAMERA OPENED")
 
-# ===============================
+
 # DROWSINESS PARAMETERS
-# ===============================
+
 EYE_CLOSED_THRESHOLD = 1.0  # seconds
 eye_closed_start = None
 alarm_on = False
 
-# ===============================
+
 # MAIN LOOP
-# ===============================
+
 while True:
     ret, frame = cap.read()
     if not ret:
@@ -75,9 +72,9 @@ while True:
                 2
             )
 
-    # ===============================
+   
     # DROWSINESS LOGIC
-    # ===============================
+    
     if len(faces) > 0 and eyes_detected == 0:
         if eye_closed_start is None:
             eye_closed_start = time.time()
@@ -100,18 +97,18 @@ while True:
         eye_closed_start = None
         alarm_on = False
 
-    # ===============================
+    
     # DISPLAY
-    # ===============================
+   
     cv2.imshow("Driver Drowsiness Detection", frame)
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         print("Q PRESSED - EXITING")
         break
 
-# ===============================
+
 # CLEANUP
-# ===============================
+
 cap.release()
 cv2.destroyAllWindows()
 print("PROGRAM ENDED")
