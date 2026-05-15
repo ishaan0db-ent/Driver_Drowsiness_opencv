@@ -1,2 +1,4 @@
-opencv-python==4.8.0.76
-numpy==1.26.4
+streamlit
+opencv-python-headless
+mediapipe
+numpy
