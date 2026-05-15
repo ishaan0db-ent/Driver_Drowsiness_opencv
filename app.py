@@ -1,6 +1,6 @@
 import streamlit as st
 import cv2
-import winsound
+
 
 st.write("""
 This project detects driver drowsiness in real time using
@@ -73,7 +73,7 @@ while run:
 
     if closed_eyes > 20:
         
-        winsound.Beep(1000, 500)
+        
         
 
 
