@@ -2,7 +2,7 @@ import streamlit as st
 import cv2
 import mediapipe as mp
 import math
-import winsound
+
 
 # Page Configuration
 st.sidebar.title("System Information")
@@ -213,11 +213,7 @@ while run:
                 alert_placeholder.error(
                     " DROWSINESS DETECTED!"
                 )
-                #Play Sound once 
-                if not alarm_on:
-                   winsound.Beep(1000, 500)
-                alarm_on = True
-
+                
             else:
 
                 alert_placeholder.success(
