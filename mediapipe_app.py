@@ -3,7 +3,7 @@ import cv2
 import mediapipe as mp
 import math
 
-from streamlit import components
+import streamlit.components.v1 as components
 
 
 # Page Configuration
