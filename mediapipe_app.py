@@ -3,6 +3,8 @@ import cv2
 import mediapipe as mp
 import math
 
+from streamlit import components
+
 
 # Page Configuration
 st.sidebar.title("System Information")
@@ -199,6 +201,14 @@ while run:
             # Alert if eyes have been closed for too long
             
             if closed_frames > FRAME_THRESHOLD:
+                components.html(
+    """
+    <audio autoplay>
+    <source src="https://www.soundjay.com/buttons/sounds/beep-01a.mp3" type="audio/mpeg">
+    </audio>
+    """,
+    height=0,
+)
 
                 cv2.putText(
                     frame,
