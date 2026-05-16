@@ -38,10 +38,10 @@ driver_drowsiness_opencv/
 # Project Preview
 
 ## Main Interface
-![Main UI](Image 1.jpeg)
+![Main UI](Screenshots/Image%201.jpeg)
 
 ## Real-Time Detection
-![Detection](Image 2.jpeg)
+![Detection](Screenshots/Image%202.jpeg)
 
 
 # Installation
