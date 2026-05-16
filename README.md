@@ -35,6 +35,14 @@ driver_drowsiness_opencv/
 ├── README.md  
 ├── data/  
 └── src/  
+# Project Preview
+
+## Main Interface
+![Main UI](Image 1.jpeg)
+
+## Real-Time Detection
+![Detection](Image 2.jpeg)
+
 
 # Installation
 
