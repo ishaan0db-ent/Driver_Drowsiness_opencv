@@ -74,9 +74,9 @@ RIGHT_EYE = [362, 385, 387, 263, 373, 380]
 closed_frames = 0
 alarm_on = False 
 
-EAR_THRESHOLD = 0.20
+EAR_THRESHOLD = 0.25
 
-FRAME_THRESHOLD = 15
+FRAME_THRESHOLD = 8
 
 
 # Distance calculation between two points
